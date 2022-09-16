@@ -1,0 +1,165 @@
+* {
+    box-sizing: border-box;
+    /*### Primary*/
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    /*### Neutral*/
+    --Very-Dark-Blue: hsl(234, 12%, 34%);
+    --Grayish-Blue: hsl(229, 6%, 66%);
+    --Very-Light-Gray: hsl(0, 0%, 98%);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    width: 100wh;
+    min-height: 100vh;
+    padding: 1rem 3rem;
+    background-color: var(--Very-Light-Gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    font-weight: 200;
+    color: var(--Grayish-Blue);
+}
+
+header h1 span {
+    font-size: 34px;
+    font-weight: 600;
+    color: var(--Very-Dark-Blue);
+}
+
+header p {
+    width: 40vw;
+    margin: auto;
+    font-size: 15px;
+    color: var(--Grayish-Blue);
+}
+
+.container {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-rows: repeat(1fr, 9);
+    grid-template-columns: repeat(1fr, 4);
+    grid-template-areas: 
+        ". . . team-builder team-builder team-builder . . ."
+        "supervisor supervisor supervisor team-builder team-builder team-builder calculator calculator calculator"
+        "supervisor supervisor supervisor karma karma karma calculator calculator calculator"
+        ". . . karma karma karma . . .";
+    gap: 1.5rem;
+}
+
+.container section {
+    width: 24rem;
+    padding: 0 2rem 2rem 2rem;
+    background-color: white;
+    box-shadow: 0 .2rem .5rem lightgray;
+    border-top-left-radius: .6rem .3rem;
+    border-top-right-radius: .6rem .3rem;
+    border-top: .3rem solid black
+}
+
+.container > section h2 {
+    font-weight: 600;
+    color: var(--Very-Dark-Blue);
+}
+
+.container > section p {
+    font-size: 15px;
+    font-weight: 200;
+    color: var(--Very-Dark-Blue);
+}
+
+.container .team-builder {
+    grid-area: team-builder;
+    border-top-color: var(--Red);
+}
+
+.container .supervisor {
+    grid-area: supervisor;
+    border-top-color: var(--Cyan);
+}
+
+.container .calculator {
+    grid-area: calculator;
+    border-top-color: var(--Blue);
+}
+
+.container .karma {
+    grid-area: karma;
+    border-top-color: var(--Orange);
+}
+
+
+.container .image {
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+@media (max-width: 375px) {
+    body {
+        width: 100vw;
+        min-height: 100vh;
+        padding: 2rem 1rem;
+        background-color: var(--Very-Light-Gray);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    header h1 {
+        font-size: 19px;
+    }
+
+    header h1 span {
+        font-size: 20px;
+    }
+
+    header p {
+        width: 68vw;
+        font-size: 12px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .container section {
+        width: 14rem;
+        height: 10rem;
+        background-color: white;
+        box-shadow: 0 .2rem .5rem lightgray;
+        border-top-left-radius: .6rem .3rem;
+        border-top-right-radius: .6rem .3rem;
+        border-top: .3rem solid black
+    }
+
+    .container > section h2 {
+        font-size: 16px;
+    }
+
+    .container > section p {
+        font-size: 9px;
+    }
+
+    .container .image {
+        margin-top: 1.5rem;
+    }
+
+    .container .image img {
+        width: 2rem;
+        margin-right: -1rem;
+    }
+}
